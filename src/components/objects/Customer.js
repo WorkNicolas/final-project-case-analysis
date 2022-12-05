@@ -1,4 +1,3 @@
-//NodeJS Syntax
 class Customer {
     constructor(name, age){
         this.name = name;
@@ -40,3 +39,5 @@ class Customer {
         this.handleBooking = handleBooking;
     }
 }
+
+export default Customer

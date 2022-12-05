@@ -1,4 +1,3 @@
-//NodeJS Syntax
 class Property{
     constructor(name, price, address){
         this.name = name;
@@ -40,3 +39,5 @@ class Property{
         this.handleBooking = this.handleBooking;
     }
 }
+
+export default Property

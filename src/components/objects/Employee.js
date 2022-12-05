@@ -1,4 +1,3 @@
-//NodeJS Syntax
 class Employee {
     constructor(name, age, salary){
         this.name = name;
@@ -47,3 +46,5 @@ class Employee {
         this.handleBooking = handleBooking;
     }
 }
+
+export default Employee

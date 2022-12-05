@@ -1,4 +1,3 @@
-//NodeJS Syntax
 class Booking {
     constructor(title, schedule, name, address, price, handleEmployee, handleCustomer, handleProperty){
         this.title = title;
@@ -61,3 +60,5 @@ class Booking {
         this.handleProperty = handleProperty;
     }
 }
+
+export default Booking
