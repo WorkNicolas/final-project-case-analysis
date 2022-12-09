@@ -38,6 +38,7 @@ class Customer {
     setBooking(handleBooking){
         this.handleBooking = handleBooking;
     }
+    //Methods
 }
 
 export default Customer
