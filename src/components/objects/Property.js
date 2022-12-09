@@ -1,5 +1,6 @@
 class Property{
-    constructor(name, price, address){
+    constructor(id, name, price, address){
+        this.id = id;
         this.name = name;
         this.price = price;
         this.address = address;
@@ -7,6 +8,9 @@ class Property{
         this.handleBooking = null;
     }
     //Getters
+    getId(){
+        return this.id;
+    }
     getName(){
         return this.name;
     }
@@ -23,6 +27,9 @@ class Property{
         return this.handleBooking;
     }
     //Mutators
+    setId(id){
+        this.id = id;
+    }
     setName(name){
         this.name = name;
     }

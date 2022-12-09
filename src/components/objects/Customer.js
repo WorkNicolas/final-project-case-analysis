@@ -1,7 +1,13 @@
 class Customer {
-    constructor(name, age){
-        this.name = name;
+    constructor(fname, lname, age, gender, email, address, contact, balance){
+        this.fname = fname;
+        this.lname = lname;
         this.age = age;
+        this.gender = gender;
+        this.balance = balance;
+        this.email = email;
+        this.address = address;
+        this.contact = contact;
         this.handleEmployee = null;
         this.handleProperty = null;
         this.handleBooking = null;
@@ -13,6 +19,22 @@ class Customer {
     getAge(){
         return this.age;
     }
+    getGender(){
+        return this.gender;
+    }
+    getBalance(){
+        return this.balance;
+    }
+    getEmail(){
+        return this.email;
+    }
+    getContact(){
+        return this.contact
+    }
+    getAddress(){
+        return this.address;
+    }
+    
     getEmployee(){
         return this.handleEmployee;
     }
@@ -28,6 +50,21 @@ class Customer {
     }
     setAge(age){
         this.age = age;
+    }
+    setGender(gender){
+        this.gender = gender;
+    }
+    setBalance(balance){
+        this.balance = balance;
+    }
+    setEmail(email){
+        this.email = email;
+    }
+    setContact(contact){
+        this.contact = contact;
+    }
+    setAddress(address){
+        this.address = address;
     }
     setEmployee(handleEmployee){
         this.handleEmployee = handleEmployee;

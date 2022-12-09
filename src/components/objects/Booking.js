@@ -1,5 +1,6 @@
 class Booking {
-    constructor(title, schedule, name, address, price, handleEmployee, handleCustomer, handleProperty){
+    constructor(id, title, schedule, name, address, price, handleEmployee, handleCustomer, handleProperty){
+        this.id = id;
         this.title = title;
         this.schedule = schedule;
         this.name = name; //maybe it should just be handled by Property.name?
@@ -10,6 +11,9 @@ class Booking {
         this.handleProperty = handleProperty
     }
     //Getters
+    getId(){
+        return this.id;
+    }
     getTitle(){
         return this.title;
     }
@@ -35,6 +39,9 @@ class Booking {
         return this.handleProperty;
     }
     //Mutators
+    setId(id){
+        this.id = id;
+    }
     setTitle(title){
         this.title = title;
     }

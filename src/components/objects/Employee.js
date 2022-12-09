@@ -1,21 +1,49 @@
 class Employee {
-    constructor(name, age, salary){
-        this.name = name;
+    constructor(id, fname, lname, age, gender, position, salary, contact, email, address){
+        this.id = id;
+        this.fname = fname;
+        this.lname = lname
         this.age = age;
+        this.gender = gender;
+        this.position = position;
         this.salary = salary;
+        this.contact = contact;
+        this.email = email;
+        this.address = address;
         this.handleCustomer = null;
         this.handleProperty = null;
         this.handleBooking = null;
     }
     //Getters
-    getName(){
-        return this.name;
+    getId(){
+        return this.id;
+    }
+    getFname(){
+        return this.fname;
+    }
+    getLname(){
+        return this.lname
     }
     getAge(){
         return this.age;
     }
+    getGender(){
+        return this.gender;
+    }
+    getPosition(){
+        return this.position;
+    }
     getSalary(){
         return this.salary;
+    }
+    getContact(){
+        return this.contact;
+    }
+    getEmail(){
+        return this.email;
+    }
+    getAddress(){
+        return this.address;
     }
     getCustomer(){
         return this.handleCustomer;
@@ -27,14 +55,32 @@ class Employee {
         return this.handleBooking;
     }
     //Mutators
+    setId(id){
+        this.id = id;
+    }
     setName(name){
         this.name = name;
     }
     setAge(age){
         this.age = age;
     }
+    setGender(gender){
+        this.gender = gender;
+    }
+    setPosition(position){
+        this.position = position;
+    }
     setSalary(salary){
         this.salary = salary;
+    }
+    setContact(contact){
+        this.contact = contact;
+    }
+    setEmail(email){
+        this.email = email;
+    }
+    setAddress(address){
+        this.address = address;
     }
     setCustomer(handleCustomer){
         this.handleCustomer = handleCustomer;
