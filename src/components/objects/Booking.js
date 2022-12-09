@@ -1,11 +1,13 @@
 class Booking {
     constructor(id, title, schedule, name, address, price, handleEmployee, handleCustomer, handleProperty){
+        //9
         this.id = id;
         this.title = title;
         this.schedule = schedule;
         this.name = name; //maybe it should just be handled by Property.name?
         this.address = address; //maybe it should just be handled by Property.address?
         this.price = price; //maybe it should just be handled by Property.price?
+        
         this.handleEmployee = handleEmployee;
         this.handleCustomer = handleCustomer;
         this.handleProperty = handleProperty

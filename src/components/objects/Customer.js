@@ -1,5 +1,7 @@
 class Customer {
-    constructor(fname, lname, age, gender, email, address, contact, balance){
+    constructor(id, fname, lname, age, gender, email, address, contact, balance){
+        //12
+        this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.age = age;
@@ -8,11 +10,15 @@ class Customer {
         this.email = email;
         this.address = address;
         this.contact = contact;
+        
         this.handleEmployee = null;
         this.handleProperty = null;
         this.handleBooking = null;
     }
     //Getters
+    getId(){
+        return this.id;
+    }
     getName(){
         return this.name;
     }

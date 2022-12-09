@@ -1,5 +1,6 @@
 class Employee {
     constructor(id, fname, lname, age, gender, dateOfBirth, position, salary, contact, email, address){
+        //14
         this.id = id;
         this.fname = fname;
         this.lname = lname
@@ -11,6 +12,7 @@ class Employee {
         this.contact = contact;
         this.email = email;
         this.address = address;
+        
         this.handleCustomer = null;
         this.handleProperty = null;
         this.handleBooking = null;
