@@ -64,15 +64,6 @@ body {
     color: white;
 }
 
-label {
-    font-size: 1.2em;
-}
-
-input {
-    height: 1.8em;
-    width: 300px;
-}
-
 .divb {
     background-color: black;
     height: 4em;

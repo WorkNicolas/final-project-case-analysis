@@ -10,6 +10,8 @@ import PropertyPage from './components/pages/PropertyPage';
 import BookingPage from './components/pages/BookingPage';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
+import Login from './components/pages/Login';
+import Register from './components/pages/Register';
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </main>
