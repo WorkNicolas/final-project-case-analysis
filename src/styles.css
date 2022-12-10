@@ -51,3 +51,35 @@ body {
     background-color: #777;
 }
 
+.dark-item {
+    background-color: black;
+    height: 2em;
+    text-align: left;
+}
+
+.dark-item.text {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 12px;
+    color: white;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+input {
+    height: 1.8em;
+    width: 300px;
+}
+
+.divb {
+    background-color: black;
+    height: 4em;
+}
+
+.divb p {
+    color: white;
+    font-size: 2.4em;
+    font-weight: bold;
+}

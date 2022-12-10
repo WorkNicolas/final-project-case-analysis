@@ -13,8 +13,10 @@ import Contact from './components/pages/Contact';
 
 function App() {
   return (
-    <div>
-      <Navbar />
+    <main>
+      <header>
+        <Navbar />
+      </header>
       <div className="container">
         <Routes>
             <Route path="/" element={<Home />} />
@@ -27,8 +29,7 @@ function App() {
             
         </Routes>
       </div>
-      
-    </div>
+    </main>
   );
 }
 
