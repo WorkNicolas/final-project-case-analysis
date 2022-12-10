@@ -1,14 +1,11 @@
 import React from "react"
+import EmployeeTable from "./tables/EmployeeTable"
 
 export default function EmployeePage(){
     return(
-        <div className="emp-container">
+        <div    >
             <h1>Employee</h1>
-            <form>
-                <div className="divb">
-                    <p>Personal Details</p>
-                </div>
-            </form>
+            <EmployeeTable />
         </div>
     )
 }

@@ -66,11 +66,12 @@ body {
 
 .divb {
     background-color: black;
-    height: 4em;
+    height: 3em;
 }
 
 .divb p {
     color: white;
-    font-size: 2.4em;
+    font-size: 1.3em;
     font-weight: bold;
 }
+

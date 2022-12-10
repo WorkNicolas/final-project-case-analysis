@@ -1,8 +1,8 @@
 class Property{
-    constructor(id, name, price, address, size, org, bds, ba){
+    constructor(id, price, address, size, org, bds, ba){
         //6
         this.id = id;
-        this.name = name;
+        this.name = null;
         this.price = price;
         this.address = address;
         this.size = size; //sqft

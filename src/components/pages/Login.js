@@ -31,7 +31,7 @@ const Login = () => {
 
 
     return (
-        <>
+        <div className="all">
             {success ? (
                 <section>
                     <h1>You are logged in!</h1>
@@ -76,7 +76,7 @@ const Login = () => {
             </p>
         </section>
             )}
-            </>
+            </div>
     )
 }
 
