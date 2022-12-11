@@ -12,6 +12,7 @@ import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
+import { EmployeeContext, CustomerContext, PropertyContext, BookingContext } from './components/GlobalContext';
 
 function App() {
   return (
