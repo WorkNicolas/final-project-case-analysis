@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './tables.css';
-import data from './CUSTOMER_MOCK_DATA.json'
+import data from './CUSTOMER_MOCK_DATA.json';
+import { CustomerContext } from '../../GlobalContext';
 
 export default function CustomerTable() {
-    const [customers, setCustomers] = useState(data);
+    const {customers, setCustomers} = useContext(CustomerContext);
     return(
         <div className="table-wrapper">
             <table>

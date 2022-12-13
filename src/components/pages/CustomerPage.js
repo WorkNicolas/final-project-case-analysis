@@ -2,8 +2,19 @@ import React from "react"
 import CustomerTable from "./tables/CustomerTable"
 import './Page.css';
 import { buttonStyles } from '../styles/styles.js';
+import Popup from "./Popup";
+import { useState, useEffect } from 'react';
+import CustomerAddInfo from "./CustomerAddInfo";
 
 export default function CustomerPage(){
+    const [buttonPopup, setButtonPopup] = useState(false);
+    const [popupOpen, setPopupOpen] = useState(false);
+
+    useEffect(() => {
+        setPopupOpen(false);
+        console.log("popupOpen")
+    }, [buttonPopup])
+
     return(
         <div>
             <h1>Customer Management</h1>
@@ -12,7 +23,10 @@ export default function CustomerPage(){
                     <h2>Manage Customers</h2>
                     <div className="page-flex">
                         <div className="left">
-                            <button style={buttonStyles}>Create Customer</button>
+                            <button onClick={() => setButtonPopup(true)} style={buttonStyles}>Create Customer</button>
+                            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                                <CustomerAddInfo />
+                            </Popup>
                             <button style={buttonStyles}>Delete Customer</button>
                             <button style={buttonStyles}>Edit Customer</button>
                         </div>

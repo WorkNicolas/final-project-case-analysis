@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './tables.css';
 import data from './BOOKING_MOCK_DATA.json'
+import { BookingContext } from '../../GlobalContext';
 
 export default function BookingTable() {
-    const [bookings, setBookings] = useState(data);
+    const {bookings, setBookings} = useContext(BookingContext);
     return(
         <div className="table-wrapper">
             <table>

@@ -2,8 +2,19 @@ import React from "react"
 import BookingTable from "./tables/BookingTable"
 import './Page.css';
 import { buttonStyles } from '../styles/styles.js';
+import BookingAddInfo from "./BookingAddInfo";
+import { useState, useEffect } from 'react';
+import Popup from "./Popup";
 
 export default function BookingPage(){
+    const [buttonPopup, setButtonPopup] = useState(false);
+    const [popupOpen, setPopupOpen] = useState(false);
+
+    useEffect(() => {
+        setPopupOpen(false);
+        console.log("popupOpen")
+    }, [buttonPopup])
+
     return(
         <div>
             <h1>Inspection Booking</h1>
@@ -12,7 +23,10 @@ export default function BookingPage(){
                     <h2>Manage Bookings</h2>
                     <div className="page-flex">
                         <div className="left">
-                            <button style={buttonStyles}>Create Booking</button>
+                            <button onClick={() => setButtonPopup(true)} style={buttonStyles}>Create Booking</button>
+                            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                                <BookingAddInfo />
+                            </Popup>
                             <button style={buttonStyles}>Delete Booking</button>
                         </div>
                         <div className="right">

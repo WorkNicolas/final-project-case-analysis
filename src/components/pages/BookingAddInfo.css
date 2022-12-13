@@ -1,0 +1,44 @@
+.booking-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333;  
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+
+}
+.button-booking {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    touch-action: manipulation;
+
+}
+.error {
+    color: #d00;
+}
+
+.left.booking{
+    background-color: #333;
+    color: white;
+}
+
+.right.booking{
+    background-color: #333;
+    color: white;
+}

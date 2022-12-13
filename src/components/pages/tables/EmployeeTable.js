@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './tables.css';
 import data from './EMPLOYEE_MOCK_DATA.json'
+import { EmployeeContext } from '../../GlobalContext';
 
 export default function EmployeeTable(props) {
-    const [employees, setEmployees] = useState(data);
+    const {employees, setEmployees} = useContext(EmployeeContext);
     return(
         <div className="table-wrapper">
             <table>

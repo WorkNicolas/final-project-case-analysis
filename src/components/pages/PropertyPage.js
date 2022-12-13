@@ -2,8 +2,19 @@ import React from "react"
 import PropertyTable from "./tables/PropertyTable"
 import './Page.css';
 import { buttonStyles } from '../styles/styles.js';
+import PropertyAddInfo from "./PropertyAddInfo";
+import { useState, useEffect } from 'react';
+import Popup from "./Popup";
 
 export default function PropertyPage(){
+    const [buttonPopup, setButtonPopup] = useState(false);
+    const [popupOpen, setPopupOpen] = useState(false);
+
+    useEffect(() => {
+        setPopupOpen(false);
+        console.log("popupOpen")
+    }, [buttonPopup])
+
     return(
         <div>
             <h1>Property Management</h1>
@@ -12,7 +23,10 @@ export default function PropertyPage(){
                     <h2>Manage Properties</h2>
                     <div className="page-flex">
                         <div className="left">
-                            <button style={buttonStyles}>Create Property</button>
+                            <button onClick={() => setButtonPopup(true)} style={buttonStyles}>Create Property</button>
+                            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                                <PropertyAddInfo />
+                            </Popup>
                             <button style={buttonStyles}>Delete Property</button>
                             <button style={buttonStyles}>Edit Property</button>
                         </div>

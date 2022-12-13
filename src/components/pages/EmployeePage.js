@@ -5,6 +5,7 @@ import { buttonStyles } from '../styles/styles.js';
 import Popup from "./Popup";
 import { useState, useEffect } from 'react';
 import EmployeeAddInfo from "./EmployeeAddInfo";
+import EmployeeDelInfo from "./EmployeeDelInfo";
 
 export default function EmployeePage(){
     const [buttonPopup, setButtonPopup] = useState(false);
@@ -14,6 +15,13 @@ export default function EmployeePage(){
         setPopupOpen(false);
         console.log("popupOpen")
     }, [buttonPopup])
+
+    const [buttonPopup2, setButtonPopup2] = useState(false);
+    
+    useEffect(() => {
+        setPopupOpen(false);
+        console.log("popupOpen")
+    }, [buttonPopup2])
 
     return(
         <div>
@@ -27,7 +35,10 @@ export default function EmployeePage(){
                             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                                 <EmployeeAddInfo />
                             </Popup>
-                            <button style={buttonStyles}>Delete Employee</button>
+                            <button onClick={() => setButtonPopup2(true)} style={buttonStyles}>Delete Employee</button>
+                            <Popup trigger={buttonPopup2} setTrigger={setButtonPopup2}>
+                                <EmployeeDelInfo />
+                            </Popup>
                             <button style={buttonStyles}>Edit Employee</button>
                         </div>
                         <div className="right">

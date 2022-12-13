@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './tables.css';
 import data from './PROPERTY_MOCK_DATA.json'
+import { PropertyContext } from '../../GlobalContext';
 
 export default function PropertyTable() {
-    const [properties, setProperties] = useState(data);
+    const {properties, setProperties} = useContext(PropertyContext);
     return(
         <div className="table-wrapper">
             <table>

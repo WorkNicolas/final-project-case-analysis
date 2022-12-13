@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import './EmployeeAddInfo.css';
+import { EmployeeContext } from '../GlobalContext';
 
 export default function EmployeeAddInfo() {
+    const {employees, setEmployees} = useContext(EmployeeContext)
     return(
         <div className="container-employee">
             <h1>Personal Information</h1>
@@ -11,11 +13,11 @@ export default function EmployeeAddInfo() {
                 <div className="personal-info-employee">
 
                     <div>
-                    <input type="text" id="FN" placeholder="Full Name" required/><br />
+                    <input type="text" name="fname" placeholder="Full Name" required/><br />
                     </div>
 
                     <div>
-                    <select name="gender" id="gender" required>
+                    <select name="gender" name="gender" required>
                         <option value="none" hidden selected>Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -23,7 +25,7 @@ export default function EmployeeAddInfo() {
                     </div>
 
                     <div>
-                    <input type="date" id="bday" value="Date of Birth" required/>
+                    <input type="date" name="dateOfBirth" value="Date of Birth" required/>
                     </div>
 
                 </div>
@@ -33,15 +35,15 @@ export default function EmployeeAddInfo() {
                 <div className="contact-info-employee">
 
                     <div>
-                    <input type="email" id="email" placeholder= "@email.com" required/><br />
+                    <input type="email" name="email" placeholder= "@email.com" required/><br />
                     </div>
 
                     <div>
-                    <input type="tel" id="number" placeholder="#xxx-xxx-xxxx" required/><br />
+                    <input type="tel" name="contact" placeholder="#xxx-xxx-xxxx" required/><br />
                     </div>
 
                     <div>
-                    <input type="text" id="address" placeholder="Address" required />
+                    <input type="text" name="address" placeholder="Address" required />
                     </div>
 
                 </div>

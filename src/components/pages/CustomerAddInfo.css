@@ -1,0 +1,91 @@
+.container-customer{
+    max-width: 500px;
+    width: 100%;
+    background-color: #333;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    
+}
+
+.container-customer .h1box{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #444;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container-customer .h1box h1{
+    color: white;
+    
+}
+
+
+
+.Customer{
+    align-items:center;
+    justify-content:center;
+    display: flex;
+    flex-direction:row;
+}
+
+.personal-info-customer{
+   margin-right: 10px;
+}
+
+.personal-info-customer div{
+    margin-bottom: 10px;
+}
+
+.personal-info-customer div input{
+    width: 210px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.personal-info-customer div select{
+    width: 210px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.contact-info-customer div{
+    margin-bottom: 10px;
+}
+
+.contact-info-customer div input{
+    width: 210px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.Costumer-Balance{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+}
+
+.Costumer-Balance div select{
+    width: 210px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
