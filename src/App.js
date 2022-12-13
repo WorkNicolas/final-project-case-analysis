@@ -26,7 +26,7 @@ function App() {
   const [bookings, setBookings] = useState(bookingData);
 
   const [addEmployeeData, setAddEmployeeData] = useState({
-    id: '',
+    id: null,
     fname: '',
     lname: '',
     age: '',
@@ -71,10 +71,94 @@ function App() {
     setEmployees(newEmployees);
   };
 
+  const [addCustomerData, setAddCustomerData] = useState({
+    id: null,
+    fname: '',
+    lname: '',
+    age: '',
+    gender: '',
+    balance: null,
+    contact: '',
+    email: '',
+    address: '',
+  })
+
+  const handleFormChange2 = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...addCustomerData};
+    newFormData[fieldName] = fieldValue;
+    console.log(fieldValue)
+    setAddCustomerData(newFormData);
+  };
+
+  const handleFormSubmit2 = (event) => {
+    event.preventDefault();
+    console.log("Customer Submitted")
+
+    const newCustomer = {
+      id: customers.length + 1,
+      fname: addCustomerData.fname,
+      lname: addEmployeeData.lname,
+      age: addCustomerData.age,
+      gender: addCustomerData.gender,
+      balance: addCustomerData.balance,
+      contact: addCustomerData.contact,
+      email: addCustomerData.email,
+      address: addCustomerData.address,
+    };
+
+    const newCustomers = [...customers, newCustomer];
+    setCustomers(newCustomers);
+  };
+
+  const [addPropertyData, setAddPropertyData] = useState({
+    id: '',
+    price: null,
+    address: '',
+    size: null,
+    org: '',
+    bds: null,
+    ba: null,
+  })
+
+  const handleFormChange3 = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...addPropertyData};
+    newFormData[fieldName] = fieldValue;
+    console.log(fieldValue)
+    setAddPropertyData(newFormData);
+  };
+
+  const handleFormSubmit3 = (event) => {
+    event.preventDefault();
+    console.log("Property Submitted")
+
+    const newProperty = {
+      id: propertyData.length + 1,
+      price: addPropertyData.price,
+      address: addPropertyData.address,
+      size: addPropertyData.size,
+      org: addPropertyData.org,
+      bds: addPropertyData.bds,
+      ba: addPropertyData.ba,
+    };
+
+    const newProperties = [...properties, newProperty];
+    setProperties(newProperties);
+  };
+
   return (
     <EmployeeContext.Provider value={{employees, setEmployees, addEmployeeData, setAddEmployeeData, handleFormChange, handleFormSubmit}}>
-      <CustomerContext.Provider value={{customers, setCustomers}}>
-        <PropertyContext.Provider value={{properties, setProperties}}>
+      <CustomerContext.Provider value={{customers, setCustomers, addCustomerData, setAddCustomerData, handleFormChange2, handleFormSubmit2}}>
+        <PropertyContext.Provider value={{properties, setProperties, addPropertyData, setAddPropertyData, handleFormChange3, handleFormSubmit3}}>
           <BookingContext.Provider value={{bookings, setBookings}}>
           <main>
             <header>
