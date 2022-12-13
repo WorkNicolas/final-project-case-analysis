@@ -90,7 +90,7 @@ export default function CustomerAddInfo(){
                     <div>
                         <input
                             style={{fontSize: '16px', height: '36px'}}
-                            type="text"
+                            type="number"
                             name="balance"
                             onChange={handleFormChange2}
                             placeholder="Balance"

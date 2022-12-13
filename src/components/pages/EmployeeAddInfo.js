@@ -108,6 +108,7 @@ export default function EmployeeAddInfo() {
 
                     <div>
                     <input 
+                        style={{fontSize: '16px'}}
                         type="text" 
                         name="position"
                         placeholder="Position" 
@@ -117,7 +118,7 @@ export default function EmployeeAddInfo() {
 
                     <div>
                     <input 
-                        type="text" 
+                        type="number" 
                         name="salary"
                         placeholder="Salary" 
                         onChange={handleFormChange}

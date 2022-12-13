@@ -30,6 +30,7 @@ export default function PropertyAddInfo() {
 
                     <label htmlFor="name">Organization:</label>
                     <input 
+                        style={{fontSize: '16px', height: '45px'}}
                         type="text" 
                         name="org" 
                         onChange={handleFormChange3}

@@ -49,13 +49,13 @@ function App() {
     console.log(fieldValue)
     setAddEmployeeData(newFormData);
   };
-
+  let employeeId = employees.id;
   const handleFormSubmit = (event) => {
     event.preventDefault();
     console.log("Employee Submitted")
 
     const newEmployee = {
-      id: employeeData.length + 1,
+      id: employeeId + 1,
       fname: addEmployeeData.fname,
       lname: addEmployeeData.lname,
       age: addEmployeeData.age,
@@ -66,7 +66,7 @@ function App() {
       email: addEmployeeData.email,
       address: addEmployeeData.address,
     };
-
+    employeeId++;
     const newEmployees = [...employees, newEmployee];
     setEmployees(newEmployees);
   };
@@ -82,7 +82,7 @@ function App() {
     email: '',
     address: '',
   })
-
+  let customerId = customers.length;
   const handleFormChange2 = (event) => {
     event.preventDefault();
 
@@ -100,9 +100,9 @@ function App() {
     console.log("Customer Submitted")
 
     const newCustomer = {
-      id: customers.length + 1,
+      id: customerId + 1,
       fname: addCustomerData.fname,
-      lname: addEmployeeData.lname,
+      lname: addCustomerData.lname,
       age: addCustomerData.age,
       gender: addCustomerData.gender,
       balance: addCustomerData.balance,
@@ -110,13 +110,13 @@ function App() {
       email: addCustomerData.email,
       address: addCustomerData.address,
     };
-
+    customerId++;
     const newCustomers = [...customers, newCustomer];
     setCustomers(newCustomers);
   };
-
+  let propertyId = properties.id;
   const [addPropertyData, setAddPropertyData] = useState({
-    id: '',
+    id: null,
     price: null,
     address: '',
     size: null,
@@ -142,7 +142,7 @@ function App() {
     console.log("Property Submitted")
 
     const newProperty = {
-      id: propertyData.length + 1,
+      id: propertyId + 1,
       price: addPropertyData.price,
       address: addPropertyData.address,
       size: addPropertyData.size,
@@ -150,16 +150,66 @@ function App() {
       bds: addPropertyData.bds,
       ba: addPropertyData.ba,
     };
-
+    propertyId++;
     const newProperties = [...properties, newProperty];
     setProperties(newProperties);
+  };
+
+  const [addBookingData, setAddBookingData] = useState({
+    id: null,
+    title: '',
+    schedule: '',
+    name: null,
+    address: '',
+    price: null,
+  })
+  let bookingId = bookings.id;
+  const handleFormChange4 = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...addBookingData};
+    newFormData[fieldName] = fieldValue;
+    console.log(fieldValue)
+    setAddBookingData(newFormData);
+  };
+
+  const handleFormChange3 = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...addPropertyData};
+    newFormData[fieldName] = fieldValue;
+    console.log(fieldValue)
+    setAddPropertyData(newFormData);
+  };
+
+  const handleFormSubmit4 = (event) => {
+    event.preventDefault();
+    console.log("Booking Submitted")
+
+    const newProperty = {
+      id: bookingId + 1,
+      title: addBookingData.title,
+      schedule: addBookingData.schedule,
+      name: addBookingData.name,
+      address: addBookingData.address,
+      price: addBookingData.price,
+    };
+    bookingId++;
+    const newBookings = [...bookings, newBooking];
+    setBookings(newBookings);
   };
 
   return (
     <EmployeeContext.Provider value={{employees, setEmployees, addEmployeeData, setAddEmployeeData, handleFormChange, handleFormSubmit}}>
       <CustomerContext.Provider value={{customers, setCustomers, addCustomerData, setAddCustomerData, handleFormChange2, handleFormSubmit2}}>
         <PropertyContext.Provider value={{properties, setProperties, addPropertyData, setAddPropertyData, handleFormChange3, handleFormSubmit3}}>
-          <BookingContext.Provider value={{bookings, setBookings}}>
+          <BookingContext.Provider value={{bookings, setBookings, addBookingData, setAddBookingData, handleFormChange4, handleFormSubmit4}}>
           <main>
             <header>
               <Navbar />
