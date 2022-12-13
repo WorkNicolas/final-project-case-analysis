@@ -176,23 +176,11 @@ function App() {
     setAddBookingData(newFormData);
   };
 
-  const handleFormChange3 = (event) => {
-    event.preventDefault();
-
-    const fieldName = event.target.getAttribute('name');
-    const fieldValue = event.target.value;
-
-    const newFormData = { ...addPropertyData};
-    newFormData[fieldName] = fieldValue;
-    console.log(fieldValue)
-    setAddPropertyData(newFormData);
-  };
-
   const handleFormSubmit4 = (event) => {
     event.preventDefault();
     console.log("Booking Submitted")
 
-    const newProperty = {
+    const newBooking = {
       id: bookingId + 1,
       title: addBookingData.title,
       schedule: addBookingData.schedule,
