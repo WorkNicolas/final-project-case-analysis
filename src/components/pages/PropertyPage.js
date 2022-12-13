@@ -17,7 +17,7 @@ export default function PropertyPage(){
 
     return(
         <div>
-            <h1>Property Management</h1>
+            <h1 style={{color: 'black'}}>Property Management</h1>
             <div className="page-flex">
                 <div className="left">
                     <h2>Manage Properties</h2>

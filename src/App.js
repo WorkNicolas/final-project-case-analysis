@@ -17,6 +17,7 @@ import employeeData from './components/pages/tables/EMPLOYEE_MOCK_DATA.json';
 import customerData from './components/pages/tables/CUSTOMER_MOCK_DATA.json';
 import propertyData from './components/pages/tables/PROPERTY_MOCK_DATA.json';
 import bookingData from './components/pages/tables/BOOKING_MOCK_DATA.json';
+import { nanoid } from 'nanoid';
 
 function App() {
   const [employees, setEmployees] = useState(employeeData);
@@ -25,6 +26,7 @@ function App() {
   const [bookings, setBookings] = useState(bookingData);
 
   const [addEmployeeData, setAddEmployeeData] = useState({
+    id: '',
     fname: '',
     lname: '',
     age: '',
@@ -36,8 +38,41 @@ function App() {
     address: '',
   })
 
+  const handleFormChange = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...addEmployeeData};
+    newFormData[fieldName] = fieldValue;
+    console.log(fieldValue)
+    setAddEmployeeData(newFormData);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("Employee Submitted")
+
+    const newEmployee = {
+      id: employeeData.length + 1,
+      fname: addEmployeeData.fname,
+      lname: addEmployeeData.lname,
+      age: addEmployeeData.age,
+      gender: addEmployeeData.gender,
+      position: addEmployeeData.position,
+      salary: addEmployeeData.salary,
+      contact: addEmployeeData.contact,
+      email: addEmployeeData.email,
+      address: addEmployeeData.address,
+    };
+
+    const newEmployees = [...employees, newEmployee];
+    setEmployees(newEmployees);
+  };
+
   return (
-    <EmployeeContext.Provider value={{employees, setEmployees}}>
+    <EmployeeContext.Provider value={{employees, setEmployees, addEmployeeData, setAddEmployeeData, handleFormChange, handleFormSubmit}}>
       <CustomerContext.Provider value={{customers, setCustomers}}>
         <PropertyContext.Provider value={{properties, setProperties}}>
           <BookingContext.Provider value={{bookings, setBookings}}>

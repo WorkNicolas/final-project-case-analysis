@@ -17,7 +17,7 @@ export default function CustomerPage(){
 
     return(
         <div>
-            <h1>Customer Management</h1>
+            <h1 style={{color: 'black'}}>Customer Management</h1>
             <div className="page-flex">
                 <div className="left">
                     <h2>Manage Customers</h2>

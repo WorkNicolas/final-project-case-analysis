@@ -17,7 +17,7 @@ export default function BookingPage(){
 
     return(
         <div>
-            <h1>Inspection Booking</h1>
+            <h1 style={{color: 'black'}}>Inspection Booking</h1>
             <div className="page-flex">
                 <div className="left">
                     <h2>Manage Bookings</h2>

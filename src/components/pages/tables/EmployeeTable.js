@@ -13,7 +13,7 @@ export default function EmployeeTable(props) {
                         <th>ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Age</th>
+                        <th>Date of Birth</th>
                         <th>Gender</th>
                         <th>Position</th>
                         <th>Salary</th>

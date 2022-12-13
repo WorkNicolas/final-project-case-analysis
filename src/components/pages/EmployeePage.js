@@ -25,7 +25,7 @@ export default function EmployeePage(){
 
     return(
         <div>
-            <h1>Employee Management</h1>
+            <h1 style={{color: 'black'}}>Employee Management</h1>
             <div className="page-flex">
                 <div className="left">
                     <h2>Manage Employees</h2>
