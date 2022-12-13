@@ -8,17 +8,17 @@ export default function Contact(){
         <div className="contact-info">
             <div className="card">
                 <FontAwesomeIcon icon={faEnvelope} className="card-icon far fa-envelope" size="lg"  />
-                <p>email@domain.com</p>
+                <p>contact@builddev.com</p>
             </div>
             
             <div className="card">
                 <FontAwesomeIcon icon={faPhone} className="card-icon fas fa-phone" size="fas" />
-                <p>+639000000000</p>
+                <p>+82-7-515-7225</p>
             </div>
             
             <div className="card">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="card-icon fas" />
-                <p>Quezon City, Philippines</p>
+                <p>2943-7, Topyeong-dong, Seogwipo-si, Jeju-do</p>
             </div>
             
         </div>

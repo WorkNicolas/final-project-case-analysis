@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './tables.css';
 import data from './EMPLOYEE_MOCK_DATA.json'
 
-export default function EmployeeTable() {
+export default function EmployeeTable(props) {
     const [employees, setEmployees] = useState(data);
     return(
         <div className="table-wrapper">
             <table>
                 <thead>
-                    <tr>
+                    <tr style={props.popupOpen ? {position: 'static'} : {position: 'static'}}>
                         <th>ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
