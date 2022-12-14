@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react';
 import './tables.css';
 import data from './BOOKING_MOCK_DATA.json'
-import { BookingContext } from '../../GlobalContext';
+import { BookingContext, EmployeeContext, CustomerContext } from '../../GlobalContext';
 
 export default function BookingTable() {
     const {bookings, setBookings} = useContext(BookingContext);
+    const {employees, setEmployees} = useContext(EmployeeContext);
+    const {customers, setCustomers} = useContext(CustomerContext);
     return(
         <div className="table-wrapper">
             <table>
@@ -15,10 +17,9 @@ export default function BookingTable() {
                     <th>Schedule</th>
                     <th>Customer</th>
                     <th>Address</th>
-                    <th>Price</th>
+                    <th>Commission</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     {bookings.map((booking) => (
                     <tr>

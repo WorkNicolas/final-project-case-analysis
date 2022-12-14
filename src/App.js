@@ -25,6 +25,8 @@ function App() {
   const [properties, setProperties] = useState(propertyData);
   const [bookings, setBookings] = useState(bookingData);
 
+  //Employee Comment
+
   const [addEmployeeData, setAddEmployeeData] = useState({
     id: null,
     fname: '',
@@ -38,6 +40,8 @@ function App() {
     address: '',
   })
 
+  const [editEmployeeId, setEditEmployeeId] = useState(null)
+
   const handleFormChange = (event) => {
     event.preventDefault();
 
@@ -49,7 +53,8 @@ function App() {
     console.log(fieldValue)
     setAddEmployeeData(newFormData);
   };
-  let employeeId = employees.id;
+
+  let employeeId = employees.length;
   const handleFormSubmit = (event) => {
     event.preventDefault();
     console.log("Employee Submitted")
@@ -70,6 +75,10 @@ function App() {
     const newEmployees = [...employees, newEmployee];
     setEmployees(newEmployees);
   };
+
+  const handleEditClick = (event, employee) => {
+
+  }
 
   const [addCustomerData, setAddCustomerData] = useState({
     id: null,
@@ -155,6 +164,8 @@ function App() {
     setProperties(newProperties);
   };
 
+  //Booking Comment
+
   const [addBookingData, setAddBookingData] = useState({
     id: null,
     title: '',
@@ -163,7 +174,7 @@ function App() {
     address: '',
     price: null,
   })
-  let bookingId = bookings.id;
+  let bookingId = bookings.length;
   const handleFormChange4 = (event) => {
     event.preventDefault();
 
@@ -194,7 +205,7 @@ function App() {
   };
 
   return (
-    <EmployeeContext.Provider value={{employees, setEmployees, addEmployeeData, setAddEmployeeData, handleFormChange, handleFormSubmit}}>
+    <EmployeeContext.Provider value={{employees, setEmployees, addEmployeeData, setAddEmployeeData, handleFormChange, handleFormSubmit, handleEditClick, editEmployeeId, setEditEmployeeId}}>
       <CustomerContext.Provider value={{customers, setCustomers, addCustomerData, setAddCustomerData, handleFormChange2, handleFormSubmit2}}>
         <PropertyContext.Provider value={{properties, setProperties, addPropertyData, setAddPropertyData, handleFormChange3, handleFormSubmit3}}>
           <BookingContext.Provider value={{bookings, setBookings, addBookingData, setAddBookingData, handleFormChange4, handleFormSubmit4}}>

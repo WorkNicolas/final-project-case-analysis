@@ -13,6 +13,7 @@
     margin-bottom: 10px;
     box-sizing: border-box;
 
+
 }
 .button-booking {
     font-family: "Open Sans", sans-serif;
@@ -41,4 +42,13 @@
 .right.booking{
     background-color: #333;
     color: white;
+    
+}
+
+.left.booking input {
+    font-size: 16px;
+}
+
+.right.booking input {
+    font-size: 16px;
 }

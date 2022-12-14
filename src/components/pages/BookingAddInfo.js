@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import './BookingAddInfo.css'
-import { BookingContext } from '../GlobalContext';
+import { BookingContext, CustomerContext, EmployeeContext } from '../GlobalContext';
 
 export default function BookingAddInfo() {
     const {bookings, setBookings} = useContext(BookingContext);
@@ -15,7 +15,7 @@ export default function BookingAddInfo() {
                     <label htmlFor="name">Name:</label>
                     <input 
                         type="text" 
-                        name="name" 
+                        name="title" 
                         onChange={handleFormChange4}
                         class="form-control" 
                         required />
