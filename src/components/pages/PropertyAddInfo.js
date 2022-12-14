@@ -10,7 +10,7 @@ export default function PropertyAddInfo() {
     return(
         <form onSubmit={handleFormSubmit3} className="property-details">
             <h1>Property Details</h1>
-            <div className="page-flex">
+            <div className="page-flex-general">
                 <div className="left property"> 
                     <label htmlFor="name">Price:</label>
                     <input 

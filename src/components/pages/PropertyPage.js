@@ -19,27 +19,20 @@ export default function PropertyPage(){
         <div>
             <h1 style={{color: 'black'}}>Property Management</h1>
             <div className="page-flex">
-                <div className="left">
+                <div className="left manage">
                     <h2>Manage Properties</h2>
-                    <div className="page-flex">
-                        <div className="left">
-                            <button onClick={() => setButtonPopup(true)} style={buttonStyles}>Create Property</button>
-                            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                                <PropertyAddInfo />
-                            </Popup>
-                            <button style={buttonStyles}>Delete Property</button>
-                            <button style={buttonStyles}>Edit Property</button>
-                        </div>
-                        <div className="right">
-                        </div>
-                    </div>
+                    <button onClick={() => setButtonPopup(true)} style={buttonStyles}>Create Property</button>
+                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                            <PropertyAddInfo />
+                        </Popup>
                     <div style={{textAlign: "left"}}>
                     <h2>Functions:</h2>
-                        <p><strong>Create Property</strong>: Creates a property with the following parameters ID, First Name, Last Name, Age, Gender, Position, Salary, Contact, Email, and Address</p>
-                        <p><strong>Delete Property</strong>: Deletes a property entry.</p>
+                        <p><strong>Create Property</strong>: Creates a property with the following parameters ID, Prices, Address, Size, Organization, Bedrooms, and Bathrooms.</p>
+                        <p><strong>Edit</strong>: Edits a property's parameters.</p>
+                        <p><strong>Delete</strong>: Deletes a property entry.</p>
                     </div>  
                 </div>
-                <div className="right">
+                <div className="right manage">
                 <PropertyTable />
                 </div>
             </div>

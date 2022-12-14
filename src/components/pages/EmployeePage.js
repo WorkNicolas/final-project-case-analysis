@@ -16,46 +16,24 @@ export default function EmployeePage(){
         console.log("popupOpen")
     }, [buttonPopup])
 
-    const [buttonPopup2, setButtonPopup2] = useState(false);
-    
-    useEffect(() => {
-        setPopupOpen(false);
-        console.log("popupOpen")
-    }, [buttonPopup2])
-
     return(
         <div>
             <h1 style={{color: 'black'}}>Employee Management</h1>
             <div className="page-flex">
-                <div className="left">
+                <div className="left manage">
                     <h2>Manage Employees</h2>
-                    <div className="page-flex">
-                        <div className="left">
-                            <button onClick={() => setButtonPopup(true)} style={buttonStyles}>Create Employee</button>
-                            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                                <EmployeeAddInfo />
-                            </Popup>
-                            <button onClick={() => setButtonPopup2(true)} style={buttonStyles}>Delete Employee</button>
-                            <Popup trigger={buttonPopup2} setTrigger={setButtonPopup2}>
-                                <EmployeeDelInfo />
-                            </Popup>
-                            <button style={buttonStyles}>Edit Employee</button>
-                        </div>
-                        <div className="right">
-                            <button style={buttonStyles}>Add Customer</button>
-                            <button style={buttonStyles}>Remove Customer</button>
-                        </div>
-                    </div>
+                    <button onClick={() => setButtonPopup(true)} style={buttonStyles}>Create Employee</button>
+                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                            <EmployeeAddInfo />
+                        </Popup>
                     <div style={{textAlign: "left"}}>
                         <h2>Functions:</h2>
                         <p><strong>Create Employee</strong>: Creates an employee with the following parameters ID, First Name, Last Name, Age, Gender, Position, Salary, Contact, Email, and Address.</p>
-                        <p><strong>Delete Employee</strong>: Deletes an employee entry.</p>
-                        <p><strong>Edit Employee</strong>: Edit the employee's parameters</p>
-                        <p><strong>Add Customer</strong>: Adds a customer that the employee will handle.</p>
-                        <p><strong>Remove Customer</strong>: Removes a customer that the employee will handle.</p>
+                        <p><strong>Delete</strong>: Deletes an employee entry.</p>
+                        <p><strong>Edit</strong>: Edit the employee's parameters</p>
                     </div>
                 </div>
-                <div className="right">
+                <div className="right manage">
                 <EmployeeTable popupOpen={popupOpen}/>
                 </div>
             </div>

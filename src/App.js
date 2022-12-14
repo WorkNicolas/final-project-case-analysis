@@ -496,7 +496,8 @@ function App() {
     id: null,
     title: '',
     schedule: '',
-    name: null,
+    name: '',
+    agent: '',
     address: '',
     price: null,
   })
@@ -530,6 +531,7 @@ function App() {
       title: addBookingData.title,
       schedule: addBookingData.schedule,
       name: addBookingData.name,
+      agent: addBookingData.agent,
       address: addBookingData.address,
       price: addBookingData.price,
     };
@@ -556,6 +558,7 @@ function App() {
       title: booking.title,
       schedule: booking.schedule,
       name: booking.name,
+      agent: booking.agent,
       address: booking.address,
       price: booking.price,
     }
@@ -565,15 +568,12 @@ function App() {
 
   const [editBookingFormData, setEditBookingFormData] = useState({
     id: null,
-    fname: '',
-    lname: '',
-    age: '',
-    gender: '',
-    position: '',
-    salary: null,
-    contact: '',
-    email: '',
+    title: '',
+    schedule: '',
+    name: '',
+    agent: '',
     address: '',
+    price: null,
   })
 
   //detects every change in input for editing old entries
@@ -598,6 +598,7 @@ function App() {
       title: editBookingFormData.title,
       schedule: editBookingFormData.schedule,
       name: editBookingFormData.name,
+      agent: editBookingFormData.agent,
       address: editBookingFormData.address,
       price: editBookingFormData.price,
     }
@@ -686,7 +687,7 @@ function App() {
             <header>
               <Navbar />
             </header>
-            <div className="container">
+            <div className="container" >
               <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/employee" element={<EmployeePage />} />

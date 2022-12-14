@@ -1,0 +1,40 @@
+/* Style the container as a flexbox */
+.page-flex-general  {
+    display: flex;
+  }
+/* Style the left and right divs */
+.left-general, .right-general {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Style the left div */
+.left-general {
+  background-color: #fff;
+  width: 50vh;
+}
+
+/* Style the right div */
+.right-general {
+  background-color: #fff;
+  width: 50vh;
+}
+
+.about > p {
+    text-align:justify;
+    font-size: 24px;
+    margin: 30px;
+}
+
+.about > h1 {
+    font-size: 42px;
+}
+
+.left-general > p, .right-general > p {
+    font-size: 21px;
+    text-align: justify;
+}
+
+.left-general > h1 , .right-general > h1 {
+    text-align: center;
+}

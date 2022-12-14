@@ -2,18 +2,35 @@
 .page-flex  {
     display: flex;
   }
-  /* Style the left and right divs */
-  .left, .right {
-    flex: 1; /* Divide the container evenly between the two divs */
-    padding: 20px;
-  }
-  /* Style the left div */
-  .left {
-    background-color: #fff;
-    width: 50vh;
-  }
-  /* Style the right div */
-  .right {
-    background-color: #fff;
-    width: 50vh;
-  }
+/* Style the left and right divs */
+.left {
+  flex: 1;
+  padding: 20px;
+}
+
+.right {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Style the left div */
+.left {
+  background-color: #fff;
+  width: 50vh;
+}
+
+/* Style the right div */
+.right {
+  background-color: #fff;
+  width: 50vh;
+}
+
+.left.manage {
+  flex: 1;
+  padding: 20px;
+}
+
+.right.manage {
+  flex: 6;
+  padding: 20px;
+}
