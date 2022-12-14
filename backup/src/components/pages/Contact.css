@@ -1,0 +1,54 @@
+
+.contact-info{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card{
+    background: black;
+    padding: 0 20px;
+    margin: 0 10px;
+    width: calc(33% - 20px);
+    height:200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+
+.card-icon{
+    font-size: 27px;
+    background: blue;
+    color: white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px !important;
+    border-radius: 50%;
+    transition: 0.3 linear;
+}
+
+.card:hover .card-icon{
+    background: none;
+    color: lightblue;
+    transform: scale(1.6);
+}
+.card p{
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    max-height: 0;
+    opacity: 0;
+    transition: 0.3s linear; 
+}
+.card:hover p{
+    max-height: 40px;
+    opacity: 1;
+}

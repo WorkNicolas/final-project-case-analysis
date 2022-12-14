@@ -1,0 +1,19 @@
+/* Style the container as a flexbox */
+.page-flex  {
+    display: flex;
+  }
+  /* Style the left and right divs */
+  .left, .right {
+    flex: 1; /* Divide the container evenly between the two divs */
+    padding: 20px;
+  }
+  /* Style the left div */
+  .left {
+    background-color: #fff;
+    width: 50vh;
+  }
+  /* Style the right div */
+  .right {
+    background-color: #fff;
+    width: 50vh;
+  }

@@ -26,8 +26,6 @@ function App() {
 
   //Employee Comment
 
-  //object used for handling handleFormChange and handleFormSubmit
-
   const [addEmployeeData, setAddEmployeeData] = useState({
     id: null,
     fname: '',
@@ -41,13 +39,20 @@ function App() {
     address: '',
   })
 
-  //keeps track of id for adding new entries
+  const [editEmployeeForm, setEditEmployeeForm] = useState({
+    id: null,
+    fname: '',
+    lname: '',
+    age: '',
+    gender: '',
+    position: '',
+    salary: null,
+    contact: '',
+    email: '',
+    address: '',
+  })
 
-  let employeeId = employees.length;
-
-  //TABLE ADD
-
-  //detects every change in input for adding new entries
+  const [editEmployeeId, setEditEmployeeId] = useState()
 
   const handleFormChange = (event) => {
     event.preventDefault();
@@ -61,7 +66,19 @@ function App() {
     setAddEmployeeData(newFormData);
   };
 
-  //adds new entry when clicked
+  const handleEditFormChange = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute('name');
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...editEmployeeForm };
+    newFormData[fieldName] = fieldValue;
+
+    setEditEmployeeForm(newFormData);
+  }
+
+  let employeeId = employees.length;
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -84,21 +101,53 @@ function App() {
     setEmployees(newEmployees);
   };
 
-  //TABLE EDIT
+  const handleEditFormSubmit = (event) => {
+    event.preventDefault();
+    
+    const editedEmployee = {
+      id: editEmployeeId,
+      fname: editEmployeeForm.fname,
+      lname: editEmployeeForm.lname,
+      age: editEmployeeForm.age,
+      gender: editEmployeeForm.gender,
+      position: editEmployeeForm.position,
+      salary: editEmployeeForm.salary,
+      contact: editEmployeeForm.contact,
+      email: editEmployeeForm.email,
+      address: editEmployeeForm.address,
+    }
 
-  //determines what row becomes edit
+    const newEmployees = [...employees];
+    const index = employees.findIndex((employee) => employee.id === editEmployeeForm.id);
 
-  const [editEmployeeId, setEditEmployeeId] = useState(null)
 
-  //edit button clicked, changes edit...Id to respective id to change from ...TableRead to ...TableEdit
+    newEmployees[index] = editedEmployee;
 
-  const handleEditClick = (event, employee) => {
+    setEmployees(newEmployees);
+    setEditEmployeeId(null);
+  }
 
+  const handleEditClick = (event, id, employee) => {
+    event.preventDefault();
+    console.log(id)
+    setEditEmployeeId(id);
+
+    const formValues = {
+      fname: employee.fname,
+      lname: employee.lname,
+      age: employee.age,
+      gender: employee.gender,
+      position: employee.position,
+      salary: employee.salary,
+      contact: employee.contact,
+      email: employee.email,
+      address: employee.address,
+    }
+
+    setEditEmployeeForm(formValues);
   }
 
   //Customer Comment
-
-  //object used for handling handleFormChange and handleFormSubmit
 
   const [addCustomerData, setAddCustomerData] = useState({
     id: null,
@@ -111,13 +160,7 @@ function App() {
     email: '',
     address: '',
   })
-
-  //keeps track of id for adding new entries
-
   let customerId = customers.length;
-
-  //detects every change in input for adding new entries
-
   const handleFormChange2 = (event) => {
     event.preventDefault();
 
@@ -129,8 +172,6 @@ function App() {
     console.log(fieldValue)
     setAddCustomerData(newFormData);
   };
-
-  //adds new entry when clicked
 
   const handleFormSubmit2 = (event) => {
     event.preventDefault();
@@ -154,6 +195,7 @@ function App() {
 
   //Property Comment
 
+  let propertyId = properties.id;
   const [addPropertyData, setAddPropertyData] = useState({
     id: null,
     price: null,
@@ -163,12 +205,6 @@ function App() {
     bds: null,
     ba: null,
   })
-
-  //keeps track of id for adding new entries
-
-  let propertyId = properties.length;
-
-  //detects every change in input for adding new entries
 
   const handleFormChange3 = (event) => {
     event.preventDefault();
@@ -181,8 +217,6 @@ function App() {
     console.log(fieldValue)
     setAddPropertyData(newFormData);
   };
-
-  //adds new entry when clicked
 
   const handleFormSubmit3 = (event) => {
     event.preventDefault();
@@ -212,13 +246,7 @@ function App() {
     address: '',
     price: null,
   })
-
-  //keeps track of id for adding new entries
-
   let bookingId = bookings.length;
-
-  //detects every change in input for adding new entries
-
   const handleFormChange4 = (event) => {
     event.preventDefault();
 
@@ -230,8 +258,6 @@ function App() {
     console.log(fieldValue)
     setAddBookingData(newFormData);
   };
-
-  //adds new entry when clicked
 
   const handleFormSubmit4 = (event) => {
     event.preventDefault();
@@ -250,35 +276,11 @@ function App() {
     setBookings(newBookings);
   };
 
-  //Router
-  //...Context.Provider ... provides global context for the tag children
-
   return (
-    <EmployeeContext.Provider value={{employees, setEmployees, //original objects
-
-                                      addEmployeeData, setAddEmployeeData, //add entries
-                                      handleFormChange, handleFormSubmit, 
-
-                                      handleEditClick, //edit entries
-                                      editEmployeeId, setEditEmployeeId}}>
-      <CustomerContext.Provider value={{customers, setCustomers, //original objects
-
-                                      addCustomerData, setAddCustomerData, //add entries
-                                      handleFormChange2, handleFormSubmit2,
-                                      
-                                      }}>
-        <PropertyContext.Provider value={{properties, setProperties, //original objects
-
-                                        addPropertyData, setAddPropertyData, //add entries
-                                      handleFormChange3, handleFormSubmit3,
-                                      
-                                      }}>
-          <BookingContext.Provider value={{bookings, setBookings, //original objects
-
-                                        addBookingData, setAddBookingData, //add entries
-                                        handleFormChange4, handleFormSubmit4,
-                                        
-                                        }}>
+    <EmployeeContext.Provider value={{employees, setEmployees, addEmployeeData, setAddEmployeeData, handleFormChange, handleFormSubmit, handleEditClick, editEmployeeId, setEditEmployeeId, handleEditFormChange, editEmployeeForm, setEditEmployeeForm, handleEditFormSubmit}}>
+      <CustomerContext.Provider value={{customers, setCustomers, addCustomerData, setAddCustomerData, handleFormChange2, handleFormSubmit2}}>
+        <PropertyContext.Provider value={{properties, setProperties, addPropertyData, setAddPropertyData, handleFormChange3, handleFormSubmit3}}>
+          <BookingContext.Provider value={{bookings, setBookings, addBookingData, setAddBookingData, handleFormChange4, handleFormSubmit4}}>
           <main>
             <header>
               <Navbar />

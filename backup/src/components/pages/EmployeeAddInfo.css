@@ -1,0 +1,80 @@
+.container-employee{
+    max-width: 480px;
+    width: 100%;
+    background-color: #333;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-employee h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    color: white;
+}
+
+.Employee{
+    align-items:center;
+    justify-content:center;
+    display: flex;
+    flex-direction:row;
+}
+
+.personal-info-employee{
+   margin-right: 10px;
+}
+
+.personal-info-employee div{
+    margin-bottom: 10px;
+}
+
+.personal-info-employee div input{
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: none;
+    font-size: 16px;
+}
+
+.personal-info-employee div select{
+    width: 205px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: none;
+    font-size: 16px;
+}
+
+
+.contact-info-employee div{
+    margin-bottom: 10px;
+}
+
+.contact-info-employee div input{
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: none;
+    font-size: 16px;
+}
+
+.Employee-details{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+}
+
+.Employee-details input{
+    margin-bottom: 10px;
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: none;
+    font-size: 16px;
+}
