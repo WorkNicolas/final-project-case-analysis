@@ -86,9 +86,9 @@ function App() {
 
   //TABLE EDIT
 
-  //determines what row becomes edit
+  //determines what row becomes input
 
-  const [editEmployeeId, setEditEmployeeId] = useState(null)
+  const [editEmployeeId, setEditEmployeeId] = useState(null);
 
   //edit button clicked, changes edit...Id to respective id to change from ...TableRead to ...TableEdit
 
@@ -244,6 +244,107 @@ function App() {
     setCustomers(newCustomers);
   };
 
+  //TABLE EDIT
+
+  //determines what row becomes input
+
+  const [editCustomerId, setEditCustomerId] = useState(null);
+
+  //edit button clicked, changes edit...Id to respective id to change from ...TableRead to ...TableEdit
+
+  const handleEditClick2 = (event, customer) => {
+    event.preventDefault();
+    console.log('Edit Clicked: ' + JSON.parse(customer.id));
+    setEditCustomerId(JSON.parse(customer.id));
+
+    const formValues = {
+      id: customer.id,
+      fname: customer.fname,
+      lname: customer.lname,
+      age: customer.age,
+      gender: customer.gender,
+      balance: customer.balance,
+      contact: customer.contact,
+      email: customer.email,
+      address: customer.address,
+    }
+
+    setEditCustomerFormData(formValues);
+  }
+
+  //object used for handling edit methods
+
+  const [editCustomerFormData, setEditCustomerFormData] = useState({
+    id: null,
+    fname: '',
+    lname: '',
+    age: '',
+    gender: '',
+    balance: null,
+    contact: '',
+    email: '',
+    address: '',
+  })
+
+  //detects every change in input for editing old entries
+
+  const handleEditFormChange2 = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute("name");
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...editCustomerFormData };
+    newFormData[fieldName] = fieldValue;
+
+    setEditCustomerFormData(newFormData);
+  }
+
+  //edits old entry when clicked
+
+  const handleEditFormSubmit2 = (event) => {
+    event.preventDefault();
+
+    const editedCustomer = {
+      id: editCustomerId,
+      fname: editCustomerFormData.fname,
+      lname: editCustomerFormData.lname,
+      age: editCustomerFormData.age,
+      gender: editCustomerFormData.gender,
+      balance: editCustomerFormData.balance,
+      contact: editCustomerFormData.contact,
+      email: editCustomerFormData.email,
+      address: editCustomerFormData.address
+    }
+
+    const newCustomers = [...customers];
+
+    const index = customers.findIndex((customer) => customer.id === editCustomerId);
+
+    newCustomers[index] = editedCustomer;
+    //setCustomers(editedCustomer); //why does this make the page blank??? 😠
+    //that should edit the table, but it doesn't work 😭
+    setEditCustomerId(null);
+  }
+
+  //cancels edit
+
+  const handleCancelClick2 = () => {
+    setEditCustomerId(null);
+  }
+
+  //TABLE DELETE
+
+  const handleDeleteClick2 = (customer_id) => {
+    const newCustomers = [...customers];
+
+    const index = customers.findIndex((customer) => customer.id === customer_id);
+
+    newCustomers.splice(index, 1);
+
+    setCustomers(newCustomers);
+  }
+
   //Property Comment
 
   const [addPropertyData, setAddPropertyData] = useState({
@@ -294,6 +395,101 @@ function App() {
     setProperties(newProperties);
   };
 
+  //TABLE EDIT
+
+  //determines what row becomes input
+
+  const [editPropertyId, setEditPropertyId] = useState(null);
+
+  //edit button clicked, changes edit...Id to respective id to change from ...TableRead to ...TableEdit
+
+  const handleEditClick3 = (event, property) => {
+    event.preventDefault();
+    console.log('Edit Clicked: ' + JSON.parse(property.id));
+    setEditPropertyId(JSON.parse(property.id));
+
+    const formValues = {
+      id: property.id,
+      price: property.price,
+      address: property.address,
+      size: property.size,
+      org: property.org,
+      bds: property.bds,
+      ba: property.ba,
+    }
+
+    setEditPropertyFormData(formValues);
+  }
+
+  //object used for handling edit methods
+
+  const [editPropertyFormData, setEditPropertyFormData] = useState({
+    id: null,
+    price: null,
+    address: '',
+    size: null,
+    org: '',
+    bds: null,
+    ba: null,
+  })
+
+  //detects every change in input for editing old entries
+
+  const handleEditFormChange3 = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute("name");
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...editPropertyFormData };
+    newFormData[fieldName] = fieldValue;
+
+    setEditPropertyFormData(newFormData);
+  }
+
+  //edits old entry when clicked
+
+  const handleEditFormSubmit3 = (event) => {
+    event.preventDefault();
+
+    const editedProperty = {
+      id: editPropertyId,
+      price: editPropertyFormData.price,
+      address: editPropertyFormData.address,
+      size: editPropertyFormData.size,
+      org: editPropertyFormData.org,
+      bds: editPropertyFormData.bds,
+      ba: editPropertyFormData.ba,
+    }
+
+    const newProperties = [...properties];
+
+    const index = properties.findIndex((property) => property.id === editPropertyId);
+
+    newProperties[index] = editedProperty;
+    //setProperty(editedProperty); //why does this make the page blank??? 😠
+    //that should edit the table, but it doesn't work 😭
+    setEditPropertyId(null);
+  }
+
+  //cancels edit
+
+  const handleCancelClick3 = () => {
+    setEditPropertyId(null);
+  }
+
+  //TABLE DELETE
+
+  const handleDeleteClick3 = (property_id) => {
+    const newProperties = [...properties];
+
+    const index = properties.findIndex((property) => property.id === property_id);
+
+    newProperties.splice(index, 1);
+
+    setProperties(newProperties);
+  }
+
   //Booking Comment
 
   const [addBookingData, setAddBookingData] = useState({
@@ -342,6 +538,98 @@ function App() {
     setBookings(newBookings);
   };
 
+  //TABLE EDIT
+
+  //determines what row becomes input
+
+  const [editBookingId, setEditBookingId] = useState(null);
+
+  //edit button clicked, changes edit...Id to respective id to change from ...TableRead to ...TableEdit
+
+  const handleEditClick4 = (event, booking) => {
+    event.preventDefault();
+    console.log('Edit Clicked: ' + JSON.parse(booking.id));
+    setEditBookingId(JSON.parse(booking.id));
+
+    const formValues = {
+      id: booking.id,
+      title: booking.title,
+      schedule: booking.schedule,
+      name: booking.name,
+      address: booking.address,
+      price: booking.price,
+    }
+
+    setEditBookingFormData(formValues);
+  }
+
+  const [editBookingFormData, setEditBookingFormData] = useState({
+    id: null,
+    fname: '',
+    lname: '',
+    age: '',
+    gender: '',
+    position: '',
+    salary: null,
+    contact: '',
+    email: '',
+    address: '',
+  })
+
+  //detects every change in input for editing old entries
+
+  const handleEditFormChange4 = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute("name");
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...editBookingFormData };
+    newFormData[fieldName] = fieldValue;
+
+    setEditBookingFormData(newFormData);
+  }
+
+  const handleEditFormSubmit4 = (event) => {
+    event.preventDefault();
+
+    const editedBooking = {
+      id: editBookingId,
+      title: editBookingFormData.title,
+      schedule: editBookingFormData.schedule,
+      name: editBookingFormData.name,
+      address: editBookingFormData.address,
+      price: editBookingFormData.price,
+    }
+
+    const newBookings = [...bookings];
+
+    const index = bookings.findIndex((booking) => booking.id === editBookingId);
+
+    newBookings[index] = editedBooking;
+    //setBooking(editedBooking); //why does this make the page blank??? 😠
+    //that should edit the table, but it doesn't work 😭
+    setEditBookingId(null);
+  }
+
+  //cancels edit
+
+  const handleCancelClick4 = () => {
+    setEditBookingId(null);
+  }
+
+  //TABLE DELETE
+
+  const handleDeleteClick4 = (booking_id) => {
+    const newBookings = [...bookings];
+
+    const index = bookings.findIndex((booking) => booking.id === booking_id);
+
+    newBookings.splice(index, 1);
+
+    setBookings(newBookings);
+  }
+
   //Router
   //...Context.Provider ... provides global context for the tag children
 
@@ -363,19 +651,37 @@ function App() {
                                       addCustomerData, setAddCustomerData, //add entries
                                       handleFormChange2, handleFormSubmit2,
                                       
-                                      }}>
+                                      handleEditClick2, //edit entries
+                                      editCustomerId, setEditCustomerId,
+                                      editCustomerFormData, setEditCustomerFormData,
+                                      handleEditFormChange2, handleEditFormSubmit2,
+                                      handleCancelClick2,
+                                      
+                                      handleDeleteClick2}}>
         <PropertyContext.Provider value={{properties, setProperties, //original objects
 
                                         addPropertyData, setAddPropertyData, //add entries
                                       handleFormChange3, handleFormSubmit3,
                                       
-                                      }}>
+                                      handleEditClick3, //edit entries
+                                      editPropertyId, setEditPropertyId,
+                                      editPropertyFormData, setEditPropertyFormData,
+                                      handleEditFormChange3, handleEditFormSubmit3,
+                                      handleCancelClick3,
+                                      
+                                      handleDeleteClick3}}>
           <BookingContext.Provider value={{bookings, setBookings, //original objects
 
                                         addBookingData, setAddBookingData, //add entries
                                         handleFormChange4, handleFormSubmit4,
                                         
-                                        }}>
+                                        handleEditClick4, //edit entries
+                                        editBookingId, setEditBookingId,
+                                        editBookingFormData, setEditBookingFormData,
+                                        handleEditFormChange4, handleEditFormSubmit4,
+                                        handleCancelClick4,
+                                        
+                                        handleDeleteClick4}}>
           <main>
             <header>
               <Navbar />
