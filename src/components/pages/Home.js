@@ -11,14 +11,18 @@ export default function Home() {
             </div>
             <div className='page-flex-general' style={{backgroundColor: '#333', height: '63vh'}}>
                 <div className='left-general' style={{backgroundColor: '#333', color: 'white'}}>
-                    <div style={{marginTop: '60px', textAlign: 'left', marginLeft: '20px', display: 'flex'}}>
-                        <h1>Welcome to Build</h1><h1 style={{color: 'orange'}}>Dev!</h1>
+                    <div style={{marginTop: '-20px', marginBottom: '-40px', textAlign: 'left', marginLeft: '20px', display: 'flex'}}>
+                        <h1 style={{color: 'lightgray'}}>Welcome to Build</h1><h1 style={{color: 'orange'}}>Dev!</h1>
                     </div>
-                    <p style={{fontSize: '20px', marginTop: '-10px', marginLeft: '20px'}}>We are a small building company based in Korea, specializing in constructing small houses and villas in rural areas. Our mission is to provide our customers with affordable, well-constructed homes, and to use technology to improve our operations and enhance the overall experience for both our employees and customers.</p>
-                    <p style={{fontSize: '20px', marginTop: '10px', marginLeft: '20px'}}>On our website, you can learn more about our services, view examples of our work, and contact us to schedule an inspection or discuss your building needs. We look forward to working with you!</p>
+                    <div style={{display:'flex'}}>
+                        <h1 style={{fontSize: '60px', textAlign: 'left', marginLeft: '20px'}}>Hi, I'm</h1>
+                        <h1 style={{fontSize: '60px', textAlign: 'left', marginLeft: '20px', color: 'red'}}>Carl Mendoza</h1>
+                    </div>
+                    <p style={{fontSize: '20px', marginTop: '-10px', marginLeft: '20px', color: 'lightgray'}}>We are a small building company based in Korea, specializing in constructing small houses and villas in rural areas. Our mission is to provide our customers with affordable, well-constructed homes, and to use technology to improve our operations and enhance the overall experience for both our employees and customers.</p>
+                    <p style={{fontSize: '20px', marginTop: '10px', marginLeft: '20px', color: 'lightgray'}}>On our website, you can learn more about our services, view examples of our work, and contact us to schedule an inspection or discuss your building needs. We look forward to working with you!</p>
                 </div>
                 <div className='right-general' style={{backgroundColor: '#333', color: 'white'}}>
-                    Test
+                    <img src="/business_carl.png" style={{height: '105%', width: '100%'}} alt="Carl Mendoza Image" />
                 </div>
             </div>
         </div>
