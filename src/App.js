@@ -109,6 +109,8 @@ function App() {
       email: employee.email,
       address: employee.address,
     }
+
+    setEditEmployeeFormData(formValues);
   }
 
   //object used for handling edit methods
@@ -126,7 +128,7 @@ function App() {
     address: '',
   })
 
-  ////detects every change in input for editing old entries
+  //detects every change in input for editing old entries
 
   const handleEditFormChange = (event) => {
     event.preventDefault();
@@ -138,6 +140,33 @@ function App() {
     newFormData[fieldName] = fieldValue;
 
     setEditEmployeeFormData(newFormData);
+  }
+
+  //edits old entry when clicked
+
+  const handleEditFormSubmit = (event) => {
+    event.preventDefault();
+
+    const editedEmployee = {
+      id: editEmployeeId,
+      fname: editEmployeeFormData.fname,
+      lname: editEmployeeFormData.lname,
+      age: editEmployeeFormData.age,
+      gender: editEmployeeFormData.gender,
+      position: editEmployeeFormData.position,
+      salary: editEmployeeFormData.salary,
+      contact: editEmployeeFormData.contact,
+      email: editEmployeeFormData.email,
+      address: editEmployeeFormData.address
+    }
+
+    const newEmployees = [...employees];
+
+    const index = employees.findIndex((employee) => employee.id === editEmployeeId);
+
+    newEmployees[index] = editedEmployee;
+    setEmployees(editedEmployee);
+    setEditEmployeeId(null);
   }
 
   //Customer Comment
