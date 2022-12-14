@@ -12,10 +12,10 @@ export default function BookingTable() {
             <table>
                 <thead>
                     <tr>
-                    <th>ID</th>
                     <th>Title</th>
                     <th>Schedule</th>
                     <th>Customer</th>
+                    <th>Agent</th>
                     <th>Address</th>
                     <th>Commission</th>
                     </tr>
@@ -23,10 +23,10 @@ export default function BookingTable() {
                 <tbody>
                     {bookings.map((booking) => (
                     <tr>
-                        <td>{booking.id}</td>
                         <td>{booking.title}</td>
                         <td>{booking.schedule}</td>
                         <td>{booking.name}</td>
+                        <td>{booking.agent}</td>
                         <td>{booking.address}</td>
                         <td>{booking.price}</td>
                     </tr>
