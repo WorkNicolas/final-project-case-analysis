@@ -13,6 +13,7 @@ export default function EmployeeTable(props) {
     const {handleEditFormChange} = useContext(EmployeeContext);
     const {handleEditFormSubmit} = useContext(EmployeeContext);
     const {handleCancelClick} = useContext(EmployeeContext);
+    const {handleDeleteClick} = useContext(EmployeeContext);
 
     return(
         <div className="table-wrapper">
@@ -45,8 +46,9 @@ export default function EmployeeTable(props) {
                                     /> 
                                     : 
                                     <EmployeeTableRead 
-                                    employee={employee}
-                                    handleEditClick={handleEditClick} 
+                                        employee={employee}
+                                        handleEditClick={handleEditClick} 
+                                        handleDeleteClick={handleDeleteClick}
 
                                     />}
                                 

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const EmployeeTableRead = ({employee, handleEditClick}) => {
+export const EmployeeTableRead = ({employee, handleEditClick, handleDeleteClick}) => {
     return(
         <tr>
             <td>{employee.fname}</td>
@@ -18,6 +18,13 @@ export const EmployeeTableRead = ({employee, handleEditClick}) => {
                     onClick={(event) => handleEditClick(event, employee)} 
                     >
                     Edit
+                </button>
+                <button 
+                    style={{width: '42px'}}
+                    type="button"
+                    onClick={() => handleDeleteClick(employee.id)}
+                    >
+                    Delete
                 </button>
             </td>
         </tr>

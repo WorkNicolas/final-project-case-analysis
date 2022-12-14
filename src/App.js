@@ -170,8 +170,22 @@ function App() {
     setEditEmployeeId(null);
   }
 
+  //cancels edit
+
   const handleCancelClick = () => {
     setEditEmployeeId(null);
+  }
+
+  //TABLE DELETE
+  
+  const handleDeleteClick = (employee_id) => {
+    const newEmployees = [...employees];
+
+    const index = employees.findIndex((employee) => employee.id === employee_id);
+
+    newEmployees.splice(index, 1);
+
+    setEmployees(newEmployees);
   }
 
   //Customer Comment
@@ -341,7 +355,9 @@ function App() {
                                       editEmployeeId, setEditEmployeeId,
                                       editEmployeeFormData, setEditEmployeeFormData,
                                       handleEditFormChange, handleEditFormSubmit,
-                                      handleCancelClick}}>
+                                      handleCancelClick,
+                                      
+                                      handleDeleteClick}}>
       <CustomerContext.Provider value={{customers, setCustomers, //original objects
 
                                       addCustomerData, setAddCustomerData, //add entries
