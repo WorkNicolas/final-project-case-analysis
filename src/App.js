@@ -94,7 +94,7 @@ function App() {
 
   const handleEditClick = (event, employee) => {
     event.preventDefault();
-    console.log(`Edit Clicked: {JSON.parse(employee.id)}`);
+    console.log('Edit Clicked: ' + JSON.parse(employee.id));
     setEditEmployeeId(JSON.parse(employee.id));
 
     const formValues = {
@@ -304,7 +304,9 @@ function App() {
                                       handleFormChange, handleFormSubmit, 
 
                                       handleEditClick, //edit entries
-                                      editEmployeeId, setEditEmployeeId}}>
+                                      editEmployeeId, setEditEmployeeId,
+                                      editEmployeeFormData, setEditEmployeeFormData,
+                                      handleEditFormChange}}>
       <CustomerContext.Provider value={{customers, setCustomers, //original objects
 
                                       addCustomerData, setAddCustomerData, //add entries

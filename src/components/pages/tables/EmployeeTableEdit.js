@@ -1,6 +1,6 @@
 import React from "react";
 
-export const EmployeeTableEdit = () => {
+export const EmployeeTableEdit = ({editEmployeeFormData, handleEditFormChange}) => {
     return(
         <tr>
             <td>
@@ -8,6 +8,8 @@ export const EmployeeTableEdit = () => {
                     type="text" 
                     required 
                     placeholder="Enter First Name"
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.fname}
                     name="fname"></input>
             </td>
             <td>
@@ -15,17 +17,23 @@ export const EmployeeTableEdit = () => {
                     type="text" 
                     required 
                     placeholder="Enter Last Name"
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.lname}
                     name="lname"></input>
             </td>
             <td>
                 <input 
                     type="date" 
                     required 
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.age}
                     name="age"></input>
             </td>
             <td>
                 <select 
-                    name="gender" 
+                    name="gender"
+                    onChange={handleEditFormChange} 
+                    value={editEmployeeFormData.gender}
                     required>
                     <option value="none" hidden selected>Gender</option>
                     <option value="male">Male</option>
@@ -37,6 +45,8 @@ export const EmployeeTableEdit = () => {
                     type="text" 
                     required 
                     placeholder="Enter Position"
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.position}
                     name="position"></input>
             </td>
             <td>
@@ -44,6 +54,8 @@ export const EmployeeTableEdit = () => {
                     type="number" 
                     required 
                     placeholder="Enter Salary"
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.salary}
                     name="salary"></input>
             </td>
             <td>
@@ -51,6 +63,8 @@ export const EmployeeTableEdit = () => {
                     type="text" 
                     required 
                     placeholder="Enter Contact"
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.contact}
                     name="contact"></input>
             </td>
             <td>
@@ -58,6 +72,8 @@ export const EmployeeTableEdit = () => {
                     type="email" 
                     required 
                     placeholder="Enter Email"
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.email}
                     name="email"></input>
             </td>
             <td>
@@ -65,7 +81,12 @@ export const EmployeeTableEdit = () => {
                     type="text" 
                     required 
                     placeholder="Enter Address"
+                    onChange={handleEditFormChange}
+                    value={editEmployeeFormData.address}
                     name="address"></input>
+            </td>
+            <td>
+                <button type="submit">Save</button>
             </td>
         </tr>
     )

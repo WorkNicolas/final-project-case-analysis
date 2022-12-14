@@ -9,6 +9,8 @@ export default function EmployeeTable(props) {
     const {employees, setEmployees} = useContext(EmployeeContext);
     const {editEmployeeId, setEditEmployeeId} = useContext(EmployeeContext);
     const {handleEditClick} = useContext(EmployeeContext);
+    const {editEmployeeFormData, setEditEmployeeFormData} = useContext(EmployeeContext);
+    const {handleEditFormChange} = useContext(EmployeeContext)
 
     return(
         <div className="table-wrapper">
@@ -34,11 +36,16 @@ export default function EmployeeTable(props) {
                         {employees.map((employee) => (
                             <Fragment>
                                 { editEmployeeId === employee.id ? 
-                                    <EmployeeTableEdit /> 
+                                    <EmployeeTableEdit 
+                                        editEmployeeFormData={editEmployeeFormData} 
+                                        handleEditFormChange={handleEditFormChange}
+                                    /> 
                                     : 
                                     <EmployeeTableRead 
                                     employee={employee}
-                                    handleEditClick={handleEditClick} />}
+                                    handleEditClick={handleEditClick} 
+
+                                    />}
                                 
                             </Fragment>
                             
