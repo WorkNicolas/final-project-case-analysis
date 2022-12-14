@@ -1,6 +1,6 @@
 import React from "react";
 
-export const EmployeeTableEdit = ({editEmployeeFormData, handleEditFormChange}) => {
+export const EmployeeTableEdit = ({editEmployeeFormData, handleEditFormChange, handleCancelClick}) => {
     return(
         <tr>
             <td>
@@ -87,6 +87,7 @@ export const EmployeeTableEdit = ({editEmployeeFormData, handleEditFormChange}) 
             </td>
             <td>
                 <button type="submit">Save</button>
+                <button style={{width: '48px'}} type="button" onClick={handleCancelClick}>Cancel</button>
             </td>
         </tr>
     )

@@ -165,7 +165,12 @@ function App() {
     const index = employees.findIndex((employee) => employee.id === editEmployeeId);
 
     newEmployees[index] = editedEmployee;
-    setEmployees(editedEmployee);
+    //setEmployees(editedEmployee); //why does this make the page blank??? 😠
+    //that should edit the table, but it doesn't work 😭
+    setEditEmployeeId(null);
+  }
+
+  const handleCancelClick = () => {
     setEditEmployeeId(null);
   }
 
@@ -335,7 +340,8 @@ function App() {
                                       handleEditClick, //edit entries
                                       editEmployeeId, setEditEmployeeId,
                                       editEmployeeFormData, setEditEmployeeFormData,
-                                      handleEditFormChange}}>
+                                      handleEditFormChange, handleEditFormSubmit,
+                                      handleCancelClick}}>
       <CustomerContext.Provider value={{customers, setCustomers, //original objects
 
                                       addCustomerData, setAddCustomerData, //add entries

@@ -10,11 +10,13 @@ export default function EmployeeTable(props) {
     const {editEmployeeId, setEditEmployeeId} = useContext(EmployeeContext);
     const {handleEditClick} = useContext(EmployeeContext);
     const {editEmployeeFormData, setEditEmployeeFormData} = useContext(EmployeeContext);
-    const {handleEditFormChange} = useContext(EmployeeContext)
+    const {handleEditFormChange} = useContext(EmployeeContext);
+    const {handleEditFormSubmit} = useContext(EmployeeContext);
+    const {handleCancelClick} = useContext(EmployeeContext);
 
     return(
         <div className="table-wrapper">
-            <form>
+            <form onSubmit={handleEditFormSubmit}>
                 <table>
                     <thead>
                         <tr style={props.popupOpen ? {position: 'static'} : {position: 'static'}}>
@@ -39,6 +41,7 @@ export default function EmployeeTable(props) {
                                     <EmployeeTableEdit 
                                         editEmployeeFormData={editEmployeeFormData} 
                                         handleEditFormChange={handleEditFormChange}
+                                        handleCancelClick={handleCancelClick}
                                     /> 
                                     : 
                                     <EmployeeTableRead 
