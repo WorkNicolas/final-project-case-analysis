@@ -7,7 +7,7 @@ export const CustomerTableRead = ({customer, handleEditClick2, handleDeleteClick
             <td>{customer.lname}</td>
             <td>{customer.age}</td>
             <td>{customer.gender}</td>
-            <td>{customer.balance}</td>
+            <td>Php {customer.balance}</td>
             <td>{customer.contact}</td>
             <td>{customer.email}</td>
             <td>{customer.address}</td>
