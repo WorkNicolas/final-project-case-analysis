@@ -687,6 +687,7 @@ function App() {
             <header>
               <Navbar />
             </header>
+            {//router for going through different pages}
             <div className="container" >
               <Routes>
                   <Route path="/" element={<Home />} />
