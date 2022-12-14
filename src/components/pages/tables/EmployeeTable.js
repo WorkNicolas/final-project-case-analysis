@@ -8,6 +8,8 @@ import { EmployeeTableEdit } from './EmployeeTableEdit';
 export default function EmployeeTable(props) {
     const {employees, setEmployees} = useContext(EmployeeContext);
     const {editEmployeeId, setEditEmployeeId} = useContext(EmployeeContext);
+    const {handleEditClick} = useContext(EmployeeContext);
+
     return(
         <div className="table-wrapper">
             <form>
@@ -34,7 +36,9 @@ export default function EmployeeTable(props) {
                                 { editEmployeeId === employee.id ? 
                                     <EmployeeTableEdit /> 
                                     : 
-                                    <EmployeeTableRead employee={employee} />}
+                                    <EmployeeTableRead 
+                                    employee={employee}
+                                    handleEditClick={handleEditClick} />}
                                 
                             </Fragment>
                             

@@ -93,7 +93,51 @@ function App() {
   //edit button clicked, changes edit...Id to respective id to change from ...TableRead to ...TableEdit
 
   const handleEditClick = (event, employee) => {
+    event.preventDefault();
+    console.log(`Edit Clicked: {JSON.parse(employee.id)}`);
+    setEditEmployeeId(JSON.parse(employee.id));
 
+    const formValues = {
+      id: employee.id,
+      fname: employee.fname,
+      lname: employee.lname,
+      age: employee.age,
+      gender: employee.gender,
+      position: employee.position,
+      salary: employee.salary,
+      contact: employee.contact,
+      email: employee.email,
+      address: employee.address,
+    }
+  }
+
+  //object used for handling edit methods
+
+  const [editEmployeeFormData, setEditEmployeeFormData] = useState({
+    id: null,
+    fname: '',
+    lname: '',
+    age: '',
+    gender: '',
+    position: '',
+    salary: null,
+    contact: '',
+    email: '',
+    address: '',
+  })
+
+  ////detects every change in input for editing old entries
+
+  const handleEditFormChange = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute("name");
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...editEmployeeFormData };
+    newFormData[fieldName] = fieldValue;
+
+    setEditEmployeeFormData(newFormData);
   }
 
   //Customer Comment

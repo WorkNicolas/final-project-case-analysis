@@ -1,6 +1,6 @@
 import React from "react";
 
-export const EmployeeTableRead = ({employee}) => {
+export const EmployeeTableRead = ({employee, handleEditClick}) => {
     return(
         <tr>
             <td>{employee.fname}</td>
@@ -12,6 +12,14 @@ export const EmployeeTableRead = ({employee}) => {
             <td>{employee.contact}</td>
             <td>{employee.email}</td>
             <td>{employee.address}</td>
+            <td>
+                <button 
+                    type="button"
+                    onClick={(event) => handleEditClick(event, employee)} 
+                    >
+                    Edit
+                </button>
+            </td>
         </tr>
     )
 }

@@ -45,3 +45,11 @@ td > input {
 td > select {
     font-size: 16px;
 }
+
+td > button {
+    height: 24px;
+    width: 32px;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
